@@ -1,0 +1,1737 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>👑 PREMIUM BUILD</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#070707;
+    color:#fff;
+    line-height:1.6;
+}
+
+:root{
+    --orange:#ff9d00;
+    --orange2:#ffb52e;
+    --dark:#0d0d0d;
+    --dark2:#121212;
+    --border:#292929;
+    --gray:#aaa;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    font-family:inherit;
+}
+
+.container{
+    width:92%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* ===== NAV ===== */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(5,5,5,.95);
+    border-bottom:1px solid #242424;
+    backdrop-filter:blur(12px);
+}
+
+.nav-container{
+    min-height:70px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:900;
+    color:#fff;
+}
+
+.logo span{
+    color:var(--orange);
+}
+
+.nav-links{
+    display:flex;
+    gap:22px;
+    align-items:center;
+}
+
+.nav-links a{
+    color:#ccc;
+    font-size:14px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.nav-links a:hover{
+    color:var(--orange);
+}
+
+.nav-discord{
+    background:var(--orange);
+    color:#000 !important;
+    padding:10px 16px;
+    border-radius:9px;
+}
+
+/* ===== HERO ===== */
+
+.hero{
+    min-height:650px;
+    display:flex;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 50% 35%,rgba(255,157,0,.16),transparent 35%),
+        linear-gradient(180deg,#090909,#070707);
+}
+
+.hero:before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+        linear-gradient(rgba(255,157,0,.035) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,157,0,.035) 1px,transparent 1px);
+    background-size:45px 45px;
+    pointer-events:none;
+}
+
+.hero-content{
+    position:relative;
+    text-align:center;
+    max-width:850px;
+    margin:auto;
+}
+
+.hero-badge{
+    display:inline-block;
+    padding:8px 16px;
+    border:1px solid #4b3518;
+    background:#15100a;
+    color:var(--orange);
+    border-radius:30px;
+    font-size:13px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(42px,8vw,82px);
+    font-weight:1000;
+    letter-spacing:-3px;
+    text-shadow:0 0 35px rgba(255,157,0,.18);
+}
+
+.hero h1 span{
+    color:var(--orange);
+}
+
+.hero p{
+    color:#aaa;
+    max-width:680px;
+    margin:20px auto 30px;
+    font-size:17px;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    border:0;
+    cursor:pointer;
+    padding:14px 22px;
+    border-radius:10px;
+    font-weight:900;
+    transition:.2s;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+.btn-main{
+    background:var(--orange);
+    color:#000;
+    box-shadow:0 0 25px rgba(255,157,0,.12);
+}
+
+.btn-dark{
+    background:#151515;
+    border:1px solid #333;
+    color:#fff;
+}
+
+/* ===== SECTIONS ===== */
+
+section{
+    padding:85px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title .small{
+    color:var(--orange);
+    font-weight:900;
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+
+.section-title h2{
+    font-size:38px;
+    margin-top:8px;
+}
+
+.section-title p{
+    color:#999;
+    max-width:650px;
+    margin:10px auto 0;
+}
+
+/* ===== INFO ===== */
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.info-card{
+    background:linear-gradient(145deg,#111,#0b0b0b);
+    border:1px solid var(--border);
+    padding:28px;
+    border-radius:16px;
+    transition:.25s;
+}
+
+.info-card:hover{
+    transform:translateY(-5px);
+    border-color:#5c401b;
+}
+
+.info-icon{
+    font-size:34px;
+    margin-bottom:12px;
+}
+
+.info-card h3{
+    margin-bottom:8px;
+}
+
+.info-card p{
+    color:#999;
+    font-size:14px;
+}
+
+/* ===== MATERIALS ===== */
+
+.material-box{
+    margin-top:25px;
+    border:1px solid #65451b;
+    background:
+        linear-gradient(135deg,rgba(255,157,0,.12),rgba(255,157,0,.025)),
+        #0d0d0d;
+    border-radius:18px;
+    padding:30px;
+    text-align:center;
+}
+
+.material-box h3{
+    color:var(--orange);
+    font-size:24px;
+}
+
+.material-box p{
+    color:#bbb;
+    margin-top:6px;
+}
+
+/* ===== PRICE ===== */
+
+.price-category{
+    margin-top:55px;
+}
+
+.price-category:first-child{
+    margin-top:0;
+}
+
+.category-title{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:18px;
+    font-size:25px;
+}
+
+.price-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.price-card{
+    background:#101010;
+    border:1px solid #282828;
+    border-radius:15px;
+    padding:20px;
+    transition:.25s;
+}
+
+.price-card:hover{
+    transform:translateY(-4px);
+    border-color:#6a4819;
+    box-shadow:0 10px 35px rgba(0,0,0,.25);
+}
+
+.price-card h4{
+    font-size:17px;
+    margin-bottom:8px;
+}
+
+.price{
+    color:var(--orange);
+    font-size:22px;
+    font-weight:900;
+    margin-bottom:14px;
+}
+
+.order-btn{
+    width:100%;
+    border:0;
+    background:var(--orange);
+    color:#000;
+    font-weight:900;
+    padding:11px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.order-btn:hover{
+    background:var(--orange2);
+    transform:translateY(-1px);
+}
+
+/* ===== HOW TO ORDER ===== */
+
+.steps{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.step{
+    background:#101010;
+    border:1px solid #292929;
+    padding:25px;
+    border-radius:15px;
+}
+
+.step-number{
+    width:42px;
+    height:42px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:var(--orange);
+    color:#000;
+    border-radius:50%;
+    font-weight:900;
+    margin-bottom:15px;
+}
+
+.step p{
+    color:#999;
+}
+
+/* ===== RECRUITMENT ===== */
+
+.recruit{
+    background:
+        radial-gradient(circle at 50% 0%,rgba(255,157,0,.08),transparent 40%);
+}
+
+.recruit-box{
+    background:#0d0d0d;
+    border:1px solid #302515;
+    border-radius:20px;
+    padding:35px;
+}
+
+.recruit-top{
+    text-align:center;
+    max-width:750px;
+    margin:auto auto 35px;
+}
+
+.recruit-top h3{
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.recruit-top p{
+    color:#999;
+}
+
+.requirements{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+    margin-bottom:40px;
+}
+
+.requirement{
+    background:#121212;
+    border:1px solid #272727;
+    padding:17px;
+    border-radius:12px;
+}
+
+.requirement strong{
+    color:var(--orange);
+}
+
+.recruit-stages{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:10px;
+    margin-bottom:35px;
+}
+
+.stage{
+    text-align:center;
+    padding:18px 10px;
+    background:#111;
+    border:1px solid #292929;
+    border-radius:12px;
+}
+
+.stage-number{
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+.stage strong{
+    display:block;
+    font-size:13px;
+}
+
+.stage span{
+    color:#777;
+    font-size:11px;
+}
+
+.form{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+}
+
+.form-group.full{
+    grid-column:1/-1;
+}
+
+.form-group label{
+    font-size:13px;
+    color:#bbb;
+    font-weight:bold;
+}
+
+.form input,
+.form textarea,
+.form select{
+    width:100%;
+    background:#080808;
+    border:1px solid #303030;
+    color:#fff;
+    padding:13px;
+    border-radius:9px;
+    outline:none;
+}
+
+.form input:focus,
+.form textarea:focus,
+.form select:focus{
+    border-color:var(--orange);
+}
+
+.form textarea{
+    min-height:110px;
+    resize:vertical;
+}
+
+.submit-recruit{
+    grid-column:1/-1;
+    border:0;
+    background:var(--orange);
+    color:#000;
+    padding:14px;
+    border-radius:10px;
+    font-weight:900;
+    cursor:pointer;
+    font-size:15px;
+}
+
+/* ===== FAQ ===== */
+
+.faq{
+    max-width:850px;
+    margin:auto;
+}
+
+details{
+    background:#101010;
+    border:1px solid #292929;
+    border-radius:12px;
+    padding:17px 20px;
+    margin-bottom:10px;
+}
+
+summary{
+    cursor:pointer;
+    font-weight:bold;
+}
+
+details p{
+    color:#999;
+    padding-top:12px;
+}
+
+/* ===== DISCORD ===== */
+
+.discord-box{
+    text-align:center;
+    background:
+        linear-gradient(135deg,rgba(255,157,0,.1),rgba(255,157,0,.025)),
+        #0e0e0e;
+    border:1px solid #493318;
+    border-radius:20px;
+    padding:55px 25px;
+}
+
+.discord-box h2{
+    font-size:36px;
+}
+
+.discord-box p{
+    color:#999;
+    max-width:600px;
+    margin:12px auto 25px;
+}
+
+/* ===== FOOTER ===== */
+
+footer{
+    border-top:1px solid #222;
+    padding:30px 0;
+    text-align:center;
+    color:#666;
+    font-size:13px;
+}
+
+footer strong{
+    color:var(--orange);
+}
+
+/* ===== MODAL ===== */
+
+.modal{
+    display:none;
+    position:fixed;
+    z-index:2000;
+    inset:0;
+    background:rgba(0,0,0,.82);
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.modal.active{
+    display:flex;
+}
+
+.modal-box{
+    width:100%;
+    max-width:520px;
+    background:#101010;
+    border:1px solid #4a3519;
+    border-radius:18px;
+    padding:28px;
+    position:relative;
+    max-height:90vh;
+    overflow:auto;
+}
+
+.close{
+    position:absolute;
+    right:18px;
+    top:12px;
+    background:none;
+    border:0;
+    color:#888;
+    font-size:28px;
+    cursor:pointer;
+}
+
+.close:hover{
+    color:#fff;
+}
+
+.modal-box h2{
+    color:var(--orange);
+    margin-bottom:5px;
+}
+
+.selected-product{
+    color:#999;
+    margin-bottom:20px;
+}
+
+.order-form{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.order-form label{
+    color:#bbb;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.order-form input,
+.order-form textarea{
+    background:#080808;
+    border:1px solid #303030;
+    color:#fff;
+    padding:13px;
+    border-radius:9px;
+    outline:none;
+}
+
+.order-form textarea{
+    min-height:100px;
+    resize:vertical;
+}
+
+.order-form input:focus,
+.order-form textarea:focus{
+    border-color:var(--orange);
+}
+
+.order-submit{
+    border:0;
+    background:var(--orange);
+    color:#000;
+    padding:14px;
+    border-radius:9px;
+    font-weight:900;
+    cursor:pointer;
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:950px){
+    .price-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .recruit-stages{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .requirements{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:700px){
+    .nav-container{
+        padding:12px 0;
+        flex-direction:column;
+    }
+
+    .nav-links{
+        gap:10px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .nav-links a{
+        font-size:12px;
+    }
+
+    .hero{
+        min-height:560px;
+    }
+
+    section{
+        padding:60px 0;
+    }
+
+    .info-grid,
+    .steps,
+    .requirements,
+    .price-grid{
+        grid-template-columns:1fr;
+    }
+
+    .recruit-stages{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .form{
+        grid-template-columns:1fr;
+    }
+
+    .form-group.full{
+        grid-column:auto;
+    }
+
+    .submit-recruit{
+        grid-column:auto;
+    }
+
+    .hero h1{
+        letter-spacing:-2px;
+    }
+
+    .section-title h2{
+        font-size:30px;
+    }
+
+    .recruit-box{
+        padding:20px;
+    }
+}
+
+@media(max-width:450px){
+    .recruit-stages{
+        grid-template-columns:1fr;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .btn{
+        width:100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== NAVIGACJA ===== -->
+
+<nav>
+<div class="container nav-container">
+
+    <a href="#start" class="logo">
+        👑 <span>PREMIUM</span> BUILD
+    </a>
+
+    <div class="nav-links">
+        <a href="#cennik">💰 Cennik</a>
+        <a href="#zamow">📦 Jak zamówić</a>
+        <a href="#rekrutacja">🏗️ Rekrutacja</a>
+        <a href="#faq">❓ FAQ</a>
+        <a href="#discord" class="nav-discord">💬 Discord</a>
+    </div>
+
+</div>
+</nav>
+
+<!-- ===== HERO ===== -->
+
+<header class="hero" id="start">
+<div class="container hero-content">
+
+    <div class="hero-badge">
+        🏆 PROFESJONALNE BUDOWY MINECRAFT
+    </div>
+
+    <h1>
+        👑 PREMIUM <span>BUILD</span>
+    </h1>
+
+    <p>
+        Profesjonalne, ręcznie wykonywane farmy, bazy i magazyny.
+        Projekty dopasowane do Twoich potrzeb — szybko, dokładnie i premium.
+    </p>
+
+    <div class="buttons">
+        <a href="#cennik" class="btn btn-main">
+            📋 ZOBACZ CENNIK
+        </a>
+
+        <a href="https://discord.gg/CSp4QYzW3"
+           target="_blank"
+           class="btn btn-dark">
+            💬 DOŁĄCZ NA DISCORD
+        </a>
+    </div>
+
+</div>
+</header>
+
+<!-- ===== INFORMACJE ===== -->
+
+<section>
+<div class="container">
+
+<div class="section-title">
+    <div class="small">DLACZEGO MY?</div>
+    <h2>🔥 PREMIUM JAKOŚĆ</h2>
+    <p>
+        Nie dostajesz zwykłej budowli. Dostajesz gotowy, dopracowany projekt.
+    </p>
+</div>
+
+<div class="info-grid">
+
+    <div class="info-card">
+        <div class="info-icon">🏗️</div>
+        <h3>Profesjonalne budowy</h3>
+        <p>
+            Farmy, bazy i magazyny wykonywane ręcznie przez budowniczych.
+        </p>
+    </div>
+
+    <div class="info-card">
+        <div class="info-icon">⚡</div>
+        <h3>Szybka realizacja</h3>
+        <p>
+            Staramy się realizować każde zamówienie sprawnie i bez zbędnego czekania.
+        </p>
+    </div>
+
+    <div class="info-card">
+        <div class="info-icon">👑</div>
+        <h3>Premium wykonanie</h3>
+        <p>
+            Dbamy o szczegóły, funkcjonalność oraz estetykę każdej budowli.
+        </p>
+    </div>
+
+</div>
+
+<div class="material-box">
+    <h3>🧱 80% MATERIAŁÓW W CENIE</h3>
+    <p>
+        Około 80% potrzebnych materiałów zapewniamy w ramach zamówienia.
+    </p>
+</div>
+
+</div>
+</section>
+
+<!-- ===== CENNIK ===== -->
+
+<section id="cennik">
+<div class="container">
+
+<div class="section-title">
+    <div class="small">PREMIUM BUILD</div>
+    <h2>💰 CENNIK</h2>
+    <p>
+        Wybierz usługę i kliknij <b>ZAMÓW</b>, aby przygotować zamówienie.
+    </p>
+</div>
+
+<!-- FARMA ŻELAZA -->
+
+<div class="price-category">
+<h3 class="category-title">⚙️ FARMA ŻELAZA</h3>
+
+<div class="price-grid">
+
+<div class="price-card">
+<h4>🟢 Mała</h4>
+<div class="price">10 000$</div>
+<button class="order-btn" onclick="openOrder('Farma żelaza — Mała — 10 000$')">ZAMÓW</button>
+</div>
+
+<div class="price-card">
+<h4>🟡 Średnia</h4>
+<div class="price">18 000$</div>
+<button class="order-btn" onclick="openOrder('Farma żelaza — Średnia — 18 000$')">ZAMÓW</button>
+</div>
+
+<div class="price-card">
+<h4>🟠 Duża</h4>
+<div class="price">25 000$</div>
+<button class="order-btn" onclick="openOrder('Farma żelaza — Duża — 25 000$')">ZAMÓW</button>
+</div>
+
+<div class="price-card">
+<h4>🔴 Premium</h4>
+<div class="price">34 000$</div>
+<button class="order-btn" onclick="openOrder('Farma żelaza — Premium — 34 000$')">ZAMÓW</button>
+</div>
+
+</div>
+</div>
+
+<!-- DRIPSTONE -->
+
+<div class="price-category">
+<h3 class="category-title">🪨 FARMA DRIPSTONE</h3>
+
+<div class="price-grid">
+
+<div class="price-card">
+<h4>25×25</h4>
+<div class="price">10 000$</div>
+<button class="order-btn" onclick="openOrder('Farma dripstone — 25×25 — 10 000$')">ZAMÓW</button>
+</div>
+
+<div class="price-card">
+<h4>50×50</h4>
+<div class="price">20 000$</div>
+<button class="order-btn" onclick="openOrder('Farma dripstone — 50×50 — 20 000$')">ZAMÓW</button>
+</div>
+
+<div class="price-card">
+<h4>75×75</h4>
+<div class="price">30 000$</div>
+<button class="order-btn" onclick="openOrder('Farma dripstone — 75×75 — 30 000$')">ZAMÓW</button>
+</div>
+
+<div class="price-card">
+<h4>100×100</h4>
+<div class="price">40 000$</div>
+<button class="order-btn" onclick="openOrder('Farma dripstone — 100×100 — 40 000$')">ZAMÓW</button>
+</div>
+
+</div>
+</div>
+
+<!-- SNIFFER -->
+
+<div class="price-category">
+<h3 class="category-title">🦖 FARMA SNIFFERÓW</h3>
+
+<div class="price-grid">
+
+<div class="price-card">
+<h4>20×20</h4>
+<div class="price">10 000$</div>
+<button class="order-btn" onclick="openOrder('Farma snifferów — 20×20 — 10 000$')">ZAMÓW</button>
+</div>
+
+<div class="price-card">
+<h4>50×50</h4>
+<div class="price">25 000$</div>
+<button class="order-btn" onclick="openOrder('Farma snifferów — 50×50 — 25 000$')">ZAMÓW</button>
+</div>
+
+<div class="price-card">
+<h4>75×75</h4>
+<div class="price">35 000$</div>
+<button class="order-btn" onclick="openOrder('Farma snifferów — 75×75 — 35 000$')">ZAMÓW</button>
+</div>
+
+<div class="price-card">
+<h4>100×100</h4>
+<div class="price">50 000$</div>
+<button class="order-btn" onclick="openOrder('Farma snifferów — 100×100 — 50 000$')">ZAMÓW</button>
+</div>
+
+</div>
+</div>
+
+<!-- PSZENICA -->
+
+<div class="price-category">
+<h3 class="category-title">🌾 FARMA PSZENICY</h3>
+
+<div class="price-grid">
+
+<div class="price-card">
+<h4>25×25</h4>
+<div class="price">5 000$</div>
+<button class="order-btn" onclick="openOrder('Farma pszenicy — 25×25 — 5 000$')">ZAMÓW</button>
+</div>
+
+<div class="price-card">
+<h4>50×50</h4>
+<div class="price">12 500$</div>
+<button class="order-btn" onclick="openOrder('Farma pszenicy — 50×50 — 12 500$')">ZAMÓW</button>
+</div>
+
+<div class="price-card">
+<h4>75×75</h4>
+<div class="price">20 000$</div>
+<button class="order-btn" onclick="openOrder('Farma pszenicy — 75×75 — 20 000$')">ZAMÓW</button>
+</div>
+
+<div class="price-card">
+<h4>100×100</h4>
+<div class="price">26 000$</div>
+<button class="order-btn" onclick="openOrder('Farma pszenicy — 100×100 — 26 000$')">ZAMÓW</button>
+</div>
+
+</div>
+</div>
+
+<!-- ŻYWICA -->
+
+<div class="price-category">
+<h3 class="category-title">🟠 FARMA ŻYWICY</h3>
+
+<div class="price-grid">
+
+<div class="price-card">
+<h4>🟢 Mała</h4>
+<div class="price">22 000$</div>
+<button class="order-btn" onclick="openOrder('Farma żywicy — Mała — 22 000$')">ZAMÓW</button>
+</div>
+
+<div class="price-card">
+<h4>🟡 Średnia</h4>
+<div class="price">31 000$</div>
+<button class="order-btn" onclick="openOrder('Farma żywicy — Średnia — 31 000$')">ZAMÓW</button>
+</div>
+
+<div class="price-card">
+<h4>🟠 Duża</h4>
+<div class="price">40 000$</div>
+<button class="order-btn" onclick="openOrder('Farma żywicy — Duża — 40 000$')">ZAMÓW</button>
+</div>
+
+<div class="price-card">
+<h4>🔴 Premium</h4>
+<div class="price">47 000$</div>
+<button class="order-btn" onclick="openOrder('Farma żywicy — Premium — 47 000$')">ZAMÓW</button>
+</div>
+
+</div>
+</div>
+
+<!-- TRZCINA -->
+
+<div class="price-category">
+<h3 class="category-title">🎋 FARMA TRZCINY</h3>
+
+<div class="price-grid">
+
+<div class="price-card">
+<h4>25×25</h4>
+<div class="price">5 000$</div>
+<button class="order-btn" onclick="openOrder('Farma trzciny — 25×25 — 5 000$')">ZAMÓW</button>
+</div>
+
+<div class="price-card">
+<h4>50×50</h4>
+<div class="price">11 000$</div>
+<button class="order-btn" onclick="openOrder('Farma trzciny — 50×50 — 11 000$')">ZAMÓW</button>
+</div>
+
+<div class="price-card">
+<h4>75×75</h4>
+<div class="price">18 000$</div>
+<button class="order-btn" onclick="openOrder('Farma trzciny — 75×75 — 18 000$')">ZAMÓW</button>
+</div>
+
+<div class="price-card">
+<h4>100×100</h4>
+<div class="price">24 000$</div>
+<button class="order-btn" onclick="openOrder('Farma trzciny — 100×100 — 24 000$')">ZAMÓW</button>
+</div>
+
+</div>
+</div>
+
+<!-- DRZEWA -->
+
+<div class="price-category">
+<h3 class="category-title">🌳 FARMA DRZEW</h3>
+
+<div class="price-grid">
+
+<div class="price-card">
+<h4>20×20</h4>
+<div class="price">6 000$</div>
+<button class="order-btn" onclick="openOrder('Farma drzew — 20×20 — 6 000$')">ZAMÓW</button>
+</div>
+
+<div class="price-card">
+<h4>30×30</h4>
+<div class="price">11 500$</div>
+<button class="order-btn" onclick="openOrder('Farma drzew — 30×30 — 11 500$')">ZAMÓW</button>
+</div>
+
+<div class="price-card">
+<h4>40×40</h4>
+<div class="price">15 500$</div>
+<button class="order-btn" onclick="openOrder('Farma drzew — 40×40 — 15 500$')">ZAMÓW</button>
+</div>
+
+<div class="price-card">
+<h4>50×50</h4>
+<div class="price">19 000$</div>
+<button class="order-btn" onclick="openOrder('Farma drzew — 50×50 — 19 000$')">ZAMÓW</button>
+</div>
+
+</div>
+</div>
+
+<!-- DODATKI -->
+
+<div class="price-category">
+<h3 class="category-title">⚙️ DODATKI</h3>
+
+<div class="price-grid">
+
+<div class="price-card">
+<h4>🤖 Automatyzacja farmy</h4>
+<div class="price">+0$</div>
+<button class="order-btn" onclick="openOrder('Automatyzacja farmy — +0$')">ZAMÓW</button>
+</div>
+
+<div class="price-card">
+<h4>🔥 Automatyczny piec</h4>
+<div class="price">3 000$</div>
+<button class="order-btn" onclick="openOrder('Automatyczny piec — 3 000$')">ZAMÓW</button>
+</div>
+
+</div>
+</div>
+
+<!-- DEKORACJE -->
+
+<div class="price-category">
+<h3 class="category-title">🎨 DEKORACJE</h3>
+
+<div class="price-grid">
+
+<div class="price-card">
+<h4>🖼️ Obrazy</h4>
+<div class="price">700$/stack</div>
+<button class="order-btn" onclick="openOrder('Obrazy — 700$/stack')">ZAMÓW</button>
+</div>
+
+<div class="price-card">
+<h4>🚩 Banery</h4>
+<div class="price">500$</div>
+<button class="order-btn" onclick="openOrder('Banery — 500$')">ZAMÓW</button>
+</div>
+
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- ===== JAK ZAMÓWIĆ ===== -->
+
+<section id="zamow">
+<div class="container">
+
+<div class="section-title">
+    <div class="small">PROSTY PROCES</div>
+    <h2>📦 JAK ZAMÓWIĆ?</h2>
+</div>
+
+<div class="steps">
+
+<div class="step">
+    <div class="step-number">1</div>
+    <h3>🛒 Wybierz usługę</h3>
+    <p>
+        Wybierz interesującą Cię farmę lub inną usługę z naszego cennika.
+    </p>
+</div>
+
+<div class="step">
+    <div class="step-number">2</div>
+    <h3>💬 Napisz na Discordzie</h3>
+    <p>
+        Kliknij przycisk zamówienia lub dołącz na naszego Discorda i utwórz ticket.
+    </p>
+</div>
+
+<div class="step">
+    <div class="step-number">3</div>
+    <h3>🏗️ Realizacja</h3>
+    <p>
+        Ustalamy szczegóły, a następnie rozpoczynamy realizację projektu.
+    </p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- ===== REKRUTACJA ===== -->
+
+<section id="rekrutacja" class="recruit">
+<div class="container">
+
+<div class="section-title">
+    <div class="small">DOŁĄCZ DO EKIPY</div>
+    <h2>🏗️ REKRUTACJA</h2>
+    <p>
+        Szukamy osób, które chcą razem z nami tworzyć najlepsze budowy Minecraft.
+    </p>
+</div>
+
+<div class="recruit-box">
+
+<div class="recruit-top">
+    <h3>👑 SZUKAMY BUDOWNICZYCH</h3>
+    <p>
+        Jeżeli potrafisz budować, masz pomysły i chcesz rozwijać się
+        razem z ekipą PREMIUM BUILD — wyślij swoje podanie.
+    </p>
+</div>
+
+<div class="requirements">
+
+<div class="requirement">
+    🧱 <strong>Umiejętności budowania</strong><br>
+    Potrafisz tworzyć estetyczne i funkcjonalne konstrukcje.
+</div>
+
+<div class="requirement">
+    💡 <strong>Kreatywność</strong><br>
+    Potrafisz tworzyć własne projekty i rozwiązania.
+</div>
+
+<div class="requirement">
+    🤝 <strong>Praca zespołowa</strong><br>
+    Umiesz współpracować z innymi osobami.
+</div>
+
+<div class="requirement">
+    ⏰ <strong>Aktywność</strong><br>
+    Możesz regularnie wykonywać zlecenia.
+</div>
+
+<div class="requirement">
+    💬 <strong>Discord</strong><br>
+    Posiadasz sprawny kontakt przez Discord.
+</div>
+
+<div class="requirement">
+    🎯 <strong>Dokładność</strong><br>
+    Dbasz o szczegóły oraz jakość wykonania.
+</div>
+
+</div>
+
+<h3 style="margin-bottom:15px;">🔥 ETAPY REKRUTACJI</h3>
+
+<div class="recruit-stages">
+
+<div class="stage">
+    <div class="stage-number">📝</div>
+    <strong>Podanie</strong>
+    <span>Wyślij formularz</span>
+</div>
+
+<div class="stage">
+    <div class="stage-number">📸</div>
+    <strong>Portfolio</strong>
+    <span>Pokaż swoje budowle</span>
+</div>
+
+<div class="stage">
+    <div class="stage-number">💬</div>
+    <strong>Rozmowa</strong>
+    <span>Poznajemy się</span>
+</div>
+
+<div class="stage">
+    <div class="stage-number">🏗️</div>
+    <strong>Okres próbny</strong>
+    <span>Sprawdzamy umiejętności</span>
+</div>
+
+<div class="stage">
+    <div class="stage-number">👑</div>
+    <strong>Przyjęcie</strong>
+    <span>Witaj w ekipie</span>
+</div>
+
+</div>
+
+<h3 style="margin-bottom:20px;">📋 FORMULARZ REKRUTACYJNY</h3>
+
+<form class="form" onsubmit="sendRecruitment(event)">
+
+<div class="form-group">
+<label>🎮 Nick Minecraft</label>
+<input id="rNick" type="text" placeholder="Twój nick" required>
+</div>
+
+<div class="form-group">
+<label>💬 Nick Discord</label>
+<input id="rDiscord" type="text" placeholder="np. nick123" required>
+</div>
+
+<div class="form-group">
+<label>🎂 Wiek</label>
+<input id="rAge" type="number" min="13" max="99" placeholder="Twój wiek" required>
+</div>
+
+<div class="form-group">
+<label>⏰ Dostępność</label>
+<input id="rTime" type="text" placeholder="np. 2–4h dziennie" required>
+</div>
+
+<div class="form-group">
+<label>🧱 Doświadczenie</label>
+<input id="rExp" type="text" placeholder="Jak długo budujesz?" required>
+</div>
+
+<div class="form-group">
+<label>🎨 Styl budowania</label>
+<input id="rStyle" type="text" placeholder="np. średniowieczny, modern" required>
+</div>
+
+<div class="form-group">
+<label>⚙️ WorldEdit</label>
+<select id="rWE" required>
+    <option value="">Wybierz</option>
+    <option>Nie znam</option>
+    <option>Podstawy</option>
+    <option>Dobry</option>
+    <option>Bardzo dobry</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>🔗 Portfolio</label>
+<input id="rPortfolio" type="text" placeholder="Link do zdjęć / portfolio">
+</div>
+
+<div class="form-group full">
+<label>🏗️ Poprzednie serwery / projekty</label>
+<textarea id="rProjects" placeholder="Opisz swoje poprzednie projekty..."></textarea>
+</div>
+
+<div class="form-group full">
+<label>👑 Dlaczego mamy wybrać właśnie Ciebie?</label>
+<textarea id="rWhy" placeholder="Napisz kilka zdań..."></textarea>
+</div>
+
+<div class="form-group full">
+<label>⭐ Co jest najważniejsze w dobrej budowie?</label>
+<textarea id="rImportant" placeholder="Twoja odpowiedź..."></textarea>
+</div>
+
+<button class="submit-recruit" type="submit">
+    🚀 WYŚLIJ PODANIE
+</button>
+
+</form>
+
+</div>
+</div>
+</section>
+
+<!-- ===== FAQ ===== -->
+
+<section id="faq">
+<div class="container">
+
+<div class="section-title">
+    <div class="small">NAJCZĘSTSZE PYTANIA</div>
+    <h2>❓ FAQ</h2>
+</div>
+
+<div class="faq">
+
+<details>
+<summary>🧱 Czy materiały są w cenie?</summary>
+<p>
+Tak. Około 80% potrzebnych materiałów zapewniamy w ramach zamówienia.
+</p>
+</details>
+
+<details>
+<summary>🏗️ Czy budowy są wykonywane ręcznie?</summary>
+<p>
+Tak. Projekty wykonujemy ręcznie i dbamy o ich wygląd oraz funkcjonalność.
+</p>
+</details>
+
+<details>
+<summary>💬 Gdzie mogę złożyć zamówienie?</summary>
+<p>
+Najlepiej wejść na naszego Discorda i utworzyć ticket.
+</p>
+</details>
+
+<details>
+<summary>💰 Czy można zamówić coś spoza cennika?</summary>
+<p>
+Tak. W przypadku indywidualnych projektów ustalamy cenę po poznaniu szczegółów.
+</p>
+</details>
+
+<details>
+<summary>⏰ Ile trwa realizacja?</summary>
+<p>
+Czas zależy od wielkości i poziomu skomplikowania projektu.
+</p>
+</details>
+
+<details>
+<summary>🏗️ Czy mogę dołączyć do ekipy?</summary>
+<p>
+Tak. Jeżeli trwa rekrutacja, możesz wysłać podanie w sekcji Rekrutacja.
+</p>
+</details>
+
+</div>
+
+</div>
+</section>
+
+<!-- ===== DISCORD ===== -->
+
+<section id="discord">
+<div class="container">
+
+<div class="discord-box">
+
+<h2>💬 DOŁĄCZ DO PREMIUM BUILD</h2>
+
+<p>
+Masz pytania? Chcesz zamówić farmę, bazę lub magazyn?
+Dołącz na Discorda i napisz do naszej ekipy.
+</p>
+
+<a
+href="https://discord.gg/CSp4QYzW3"
+target="_blank"
+class="btn btn-main"
+>
+🚀 DOŁĄCZ NA DISCORD
+</a>
+
+</div>
+
+</div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+
+<footer>
+<div class="container">
+    👑 <strong>PREMIUM BUILD</strong> — Profesjonalne budowy Minecraft
+    <br>
+    © 2026 PREMIUM BUILD. Wszystkie prawa zastrzeżone.
+</div>
+</footer>
+
+<!-- ===== MODAL ZAMÓWIENIA ===== -->
+
+<div class="modal" id="orderModal">
+
+<div class="modal-box">
+
+<button class="close" onclick="closeOrder()">×</button>
+
+<h2>📦 ZAMÓWIENIE</h2>
+
+<div class="selected-product" id="selectedProduct">
+    Wybierz usługę
+</div>
+
+<form class="order-form" onsubmit="sendOrder(event)">
+
+<label>🎮 Nick Minecraft</label>
+<input
+    id="orderNick"
+    type="text"
+    placeholder="Twój nick Minecraft"
+    required
+>
+
+<label>💬 Discord</label>
+<input
+    id="orderDiscord"
+    type="text"
+    placeholder="Twój nick Discord"
+    required
+>
+
+<label>📝 Dodatkowe informacje</label>
+<textarea
+    id="orderInfo"
+    placeholder="Np. gdzie ma znajdować się farma, dodatkowe wymagania..."
+></textarea>
+
+<button class="order-submit" type="submit">
+    🚀 PRZEJDŹ NA DISCORD
+</button>
+
+</form>
+
+</div>
+</div>
+
+<script>
+
+/* =========================
+   ZAMÓWIENIA
+========================= */
+
+let selectedProduct = "";
+
+function openOrder(product){
+
+    selectedProduct = product;
+
+    document.getElementById("selectedProduct").textContent =
+        "Wybrana usługa: " + product;
+
+    document.getElementById("orderModal").classList.add("active");
+
+}
+
+function closeOrder(){
+
+    document.getElementById("orderModal").classList.remove("active");
+
+}
+
+document.getElementById("orderModal").addEventListener("click", function(e){
+
+    if(e.target === this){
+        closeOrder();
+    }
+
+});
+
+function sendOrder(event){
+
+    event.preventDefault();
+
+    const nick =
+        document.getElementById("orderNick").value;
+
+    const discord =
+        document.getElementById("orderDiscord").value;
+
+    const info =
+        document.getElementById("orderInfo").value;
+
+    const message =
+`📦 NOWE ZAMÓWIENIE — PREMIUM BUILD
+
+🛠️ Usługa:
+${selectedProduct}
+
+🎮 Nick Minecraft:
+${nick}
+
+💬 Discord:
+${discord}
+
+📝 Dodatkowe informacje:
+${info || "Brak"}
+
+━━━━━━━━━━━━━━━━━━━━
+👑 PREMIUM BUILD`;
+
+    navigator.clipboard.writeText(message)
+    .then(() => {
+
+        alert(
+            "✅ Zamówienie zostało przygotowane!\n\n" +
+            "Tekst zamówienia został skopiowany.\n" +
+            "Wklej go na naszym Discordzie."
+        );
+
+        window.open(
+            "https://discord.gg/CSp4QYzW3",
+            "_blank"
+        );
+
+        closeOrder();
+
+    })
+    .catch(() => {
+
+        alert(
+            "❌ Nie udało się automatycznie skopiować zamówienia.\n" +
+            "Wejdź na Discord i napisz obsłudze."
+        );
+
+        window.open(
+            "https://discord.gg/CSp4QYzW3",
+            "_blank"
+        );
+
+    });
+
+}
+
+/* =========================
+   REKRUTACJA
+========================= */
+
+function sendRecruitment(event){
+
+    event.preventDefault();
+
+    const nick =
+        document.getElementById("rNick").value;
+
+    const discord =
+        document.getElementById("rDiscord").value;
+
+    const age =
+        document.getElementById("rAge").value;
+
+    const time =
+        document.getElementById("rTime").value;
+
+    const exp =
+        document.getElementById("rExp").value;
+
+    const style =
+        document.getElementById("rStyle").value;
+
+    const worldedit =
+        document.getElementById("rWE").value;
+
+    const portfolio =
+        document.getElementById("rPortfolio").value;
+
+    const projects =
+        document.getElementById("rProjects").value;
+
+    const why =
+        document.getElementById("rWhy").value;
+
+    const important =
+        document.getElementById("rImportant").value;
+
+    const application =
+`🏗️ PODANIE — PREMIUM BUILD
+
+🎮 Nick Minecraft:
+${nick}
+
+💬 Discord:
+${discord}
+
+🎂 Wiek:
+${age}
+
+⏰ Dostępność:
+${time}
+
+🧱 Doświadczenie:
+${exp}
+
+🎨 Styl budowania:
+${style}
+
+⚙️ WorldEdit:
+${worldedit}
+
+🔗 Portfolio:
+${portfolio || "Brak"}
+
+🏗️ Poprzednie projekty:
+${projects || "Brak"}
+
+👑 Dlaczego mamy wybrać właśnie Ciebie?
+${why || "Brak odpowiedzi"}
+
+⭐ Co jest najważniejsze w dobrej budowie?
+${important || "Brak odpowiedzi"}
+
+━━━━━━━━━━━━━━━━━━━━
+👑 PREMIUM BUILD`;
+
+    navigator.clipboard.writeText(application)
+    .then(() => {
+
+        alert(
+            "✅ Podanie zostało przygotowane!\n\n" +
+            "Skopiowaliśmy je do schowka.\n" +
+            "Wklej je na naszym Discordzie."
+        );
+
+        window.open(
+            "https://discord.gg/CSp4QYzW3",
+            "_blank"
+        );
+
+    })
+    .catch(() => {
+
+        alert(
+            "❌ Nie udało się skopiować podania.\n" +
+            "Wejdź na Discord i skontaktuj się z administracją."
+        );
+
+        window.open(
+            "https://discord.gg/CSp4QYzW3",
+            "_blank"
+        );
+
+    });
+
+}
+
+</script>
+
+</body>
+</html>
